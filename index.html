@@ -13,17 +13,17 @@
 <script>
 function autospam() {
   navigator.clipboard.writeText("https://website-spammer.raadsel.repl.co/autospam.html");
-
-  alert("Copied the text: " + copyText.value);
+  document.getElementById("copied").innerHTML = "Copied autospammer link to clipboard!";
 }
 function virusspam() {
     navigator.clipboard.writeText("https://website-spammer.raadsel.repl.co/virusspam.html");
-
-  alert("Copied the text: " + copyText.value);
+    document.getElementById("copied").innerHTML = "Copied virusspammer link to clipboard!";
 }
 </script>
 </head>
 
+
+  
 <body>
 <div id="myDIV" class="header">
   <h2>Website spammer</h2>
@@ -36,7 +36,7 @@ function virusspam() {
   <input type="text" id="myInput2" placeholder="Count.. (ex: 6)">
   <span onclick="javascript:newElement()" class="addBtn">Start</span>
 </div>
-<h1>NO DATA IS SAVED</h1>
+<h1 id="copied">NO DATA IS SAVED</h1>
 <h2>Auto spammer: `<a onclick='autospam()' href='#'> click to copy</a>` Opens a tab that opens 15 rickrolls!<br> 
     Virus spammer: `<a onclick='virusspam()' href='#'>click to copy</a>`  - Opens tabs which open tabs that open tabs. (spreads like a virus, thats why I choose that name)<br></h2>
   <center>
