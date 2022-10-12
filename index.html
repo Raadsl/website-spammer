@@ -28,13 +28,17 @@ function virusspam() {
 <div id="myDIV" class="header">
   <h2>Website spammer</h2>
   <p>This is a website opener spammer. I dont know why you would want this but here it is! Enter how many websites you want to open and enter the URL. Then click start and enjoy I guess?<br>
-    I recommend entering the full URL, including the https://
+    
+    I recommend entering the full URL, including protocols like https://
   </p>
   <p id="errormsg"></p>
   <input type="text" id="myInput" placeholder="Website here... (ex: 
     https://example.com/)">
+  <span onclick="javascript:copy()" class="addBtn" title="Copies a URL that opens the tabs you inputted and opens it as much as the number you inputted">Copy URL</span>
   <input type="text" id="myInput2" placeholder="Count.. (ex: 6)">
-  <span onclick="javascript:newElement()" class="addBtn">Start</span>
+  
+  <span onclick="javascript:newElement()" title="opens the website" class="addBtn">Start</span>
+  
 </div>
 <h1 id="copied">NO DATA IS SAVED</h1>
 <h2>Auto spammer: <a onclick='autospam()' href='#'> click to copy</a> - Opens a tab that opens 15 rickrolls!<br> 
@@ -49,6 +53,44 @@ function virusspam() {
     </center>
 
   <script async src="https://zink.tips/zwc.js?rid=6341ce73d38c12e2b604bcc5&c=gold"></script>
+  <!-- Modal STUFF -->
+<div id="myModal" class="modal">
+
+  
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>NEW UPDATE: Open custom URLS! Use the Copy URL button at the top of the site!</p>
+    <p>Press anywhere on the screen (except on this modal) to dismiss this message</p>
+  </div>
+
+</div>
+<script>
+//modal script
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+modal.style.display = "block";
+
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+  
+</script>
 </body>
 </html>
 <html lang='en'>

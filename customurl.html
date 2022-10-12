@@ -10,16 +10,18 @@
 </head>
 
 <body>
-  <p>Auto spam tab [VIRUS MODE].. (virus because it spreads like a virus, not an actual virus! No worries) For full website: go to https://Website-Spammer.raadsel.repl.co</p>
+  <p>Auto spam tab [CUSTOM MODE].. (Opens a custom website, a custom amount of times!) For full website: go to https://Website-Spammer.raadsel.repl.co</p>
   <p>Send this link to your friends or something, and rip your browser.</p>
   <p>If you like this project, consider donating via the smiley face on the bottom-left, its free because once you sign-up, you get 1 dollar free credits to spend!</p>
-  <button class='button' onclick="window.open('https://Website-Spammer.raadsel.repl.co')">Main website</button>
+  <button class='button' onclick="window.open('https://website-Spammer.raadsel.repl.co')">Main website</button>
 <script>
-  for (let i = 0; i < 5; i++) {
-    window.open('https://Website-Spammer.raadsel.repl.co/virusspam.html')
-
-  }
-  
+const url = new URLSearchParams(window.location.search).get("url");
+const times = new URLSearchParams(window.location.search).get("times");
+console.log(times)
+console.log(url)
+for (let i = 0; i < parseInt(times); i++) {
+  window.open(url)
+}
 </script>
  <!--
   This script places a badge on your repl's full-browser view back to your repl's cover
