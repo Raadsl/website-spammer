@@ -77,6 +77,14 @@ input {
   color: black;
 }
 
+.red {
+  background-color: #0eafac;
+}
+.red:hover {
+  background-color: #a7ece4;
+  color: black;
+}
+
 /* visit counter */
 
 div.visitcounter {

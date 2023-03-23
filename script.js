@@ -9,8 +9,12 @@ function copy() {
   }
   else {
   //navigator.clipboard.writeText(`https://website-spammer.raadsel.repl.co/customurl.html?url=${inputValue}&times=${count}`);
-  navigator.clipboard.writeText(`https://website-spammer.raadsel.repl.co/customurl.html?url=${inputValue}&times=${count}`).then(function(x) {
-      alert(`Copied URL to open "${inputValue}", "${inputValue2}" times once it loads!`);
+  navigator.clipboard.writeText(`https://website-spammer.raadsel.repl.co/customurl.html?url=${inputValue}&times=${count}`).catch(function(error) {
+    alert("An error has occurred: "+error);
+    document.getElementById("copied").innerHTML = error
+    throw new Error(error);
+}).then(function(x) {
+      alert(`Copied URL to open "${inputValue}", "${inputValue2}" times once it loads!`)
       document.getElementById("copied").innerHTML = `Copied URL to open ${inputValue}, ${inputValue2} times!`;
     });
   //document.getElementById("copied").innerHTML = `Copied URL to open ${inputValue}, ${inputValue2} times!`;
@@ -95,3 +99,38 @@ function newElement() {
   }
   }
 }
+
+
+function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  let expires = "expires="+d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let ca = document.cookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+//request scirpt
+
+
+function httpGet(theUrl) {
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+}
+console.log(httpGet("/LICENSE"))
+console.log("Made by Jorik aka Raadsel")
