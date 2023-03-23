@@ -61,10 +61,10 @@ function setCookie(cname,cvalue,exdays) {
 <h2>Auto spammer: <a onclick='autospam()' href='#'> click to copy</a> - Opens a tab that opens 15 rickrolls!<br> 
     Virus spammer: <a onclick='virusspam()' href='#'>click to copy</a> - Opens tabs which open tabs that open tabs. (spreads like a virus, thats why I choose that name)<br></h2>
   <center>
-  <button class='button' onclick="window.open('autospam')">Open auto spammer</button>
+  <button class='button' onclick="window.open(window.location.href+'/autospam')">Open auto spammer</button>
 
   <button class='button red' onclick="window.open('https://raadsel.is-a.dev')">Open Raadsel's website</button> 
-  <button class='button' onclick="window.open('/virusspam')">Open virus spread spammer</button><br> 
+  <button class='button' onclick="window.open(window.location.href+'/virusspam')">Open virus spread spammer</button><br> 
   <p>Made by Raadsel.</p>
     <p>If you like this project, consider donating via the smiley face on the bottom-right, its free because once you sign-up, you get 1 dollar free credits to spend!</p>
     </center>
