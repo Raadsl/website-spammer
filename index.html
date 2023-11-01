@@ -1,185 +1,100 @@
-
-<!--Read the LICENSE before using this-->
-<!--I am not the best at frond-end but it works!1!!!-->
 <!DOCTYPE html>
 <html>
-<script type = "text/javascript" src="script.js"></script>
 <head>
-  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Website spammer! - The best tool to prank your friends :)</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
   <link rel="icon" type="image/x-icon" href="favi.png">
-  <link href="style.css" rel="stylesheet" type="text/css" />
-  <meta name="google-site-verification" content="pOVLUz1cD9uzwpoiy7s0_iNJYQ8HUN2qQrnfy8rTA5k" />
-<script>
-function autospam() {
-
-  navigator.clipboard.writeText("https://website-spammer.raadsel.repl.co/autospam").catch(function(error) {
-    document.getElementById("copied").innerHTML = "An error has occurred: "+error;
-});
-  document.getElementById("copied").innerHTML = "Copied autospammer link to clipboard!";
-}
-function virusspam() {
-
-    navigator.clipboard.writeText("https://website-spammer.raadsel.repl.co/virusspam").catch(function(error) {
-    document.getElementById("copied").innerHTML = "An error has occurred: "+error;
-});
-    document.getElementById("copied").innerHTML = "Copied virusspammer link to clipboard!";
-
-}
-
-function setCookie(cname,cvalue,exdays) {
-  const d = new Date();
-  d.setTime(d.getTime() + (exdays*24*60*60*1000));
-  let expires = "expires=" + d.toUTCString();
-  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-</script>
-
+  <meta name="google-site-verification" content="A3EtdKAUKi0u0gtBJZTAtnO49zW5dqdNPEdoFmT4mMQ" />
+  <meta name="title" content="Website spammer! - The best tool to prank your friends :)">
+  <meta name="description" content="A tool to prank your friends! - Website spammer!">
+  <meta name="keywords" content="website spammer, prank your friends, prank, friends, spam, raadsel, raadsl.github.io">
+  <meta name="author" content="Raadsel">
+  
 </head>
-
-
-  
 <body>
-  
-<div id="myDIV" class="header">
-  <h2>Website spammer</h2>
-  <p>This is a website opener spammer. I dont know why you would want this but here it is! Enter how many websites you want to open and enter the URL. Then click start and enjoy I guess?<br>
-    
-    Please use protocols like `https://` to open the right site!
-  </p>
-  <p id="errormsg"></p>
-  <input type="text" id="myInput" placeholder="Website here... (ex: 
-    https://example.com/)">
-  <span onclick="javascript:copy()" class="addBtn" title="Copies a URL that opens the tabs you inputted and opens it as much as the number you inputted">Copy URL</span>
-  <input type="text" id="myInput2" placeholder="Count.. (ex: 6)">
-  
-  <span onclick="javascript:newElement()" title="opens the website" class="addBtn">Start</span>
-  
-</div>
-<h1 id="copied">NO DATA IS SAVED</h1>
-<h2>Auto spammer: <a class='link' onclick='autospam()' href='#'> click to copy</a> - Opens a tab that opens 15 rickrolls!<br> 
-    Virus spammer: <a class='link' onclick='virusspam()' href='#'>click to copy</a> - Opens tabs which open tabs that open tabs. (spreads like a virus, thats why I choose that name)<br></h2>
-  <center>
-  <button class='button' onclick="window.open(window.location.href+'/autospam')">Open auto spammer</button>
 
-  <button class='button red' onclick="window.open('https://raadsel.is-a.dev')">Open Raadsel's website</button> 
-  <button class='button' onclick="window.open(window.location.href+'/virusspam')">Open virus spread spammer</button><br> 
-  <p>Made by Raadsel.</p>
-    <p>If you like this project, consider donating via the smiley face on the bottom-right, its free because once you sign-up, you get 1 dollar free credits to spend!</p>
-    </center>
-
-  
-  <!-- Modal STUFF  -->
-<div id="myModal" class="modal">
-
-  
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <center><h1> → Please read this! ←  </h1>
-    <h3>Website Spammer - opened over 70 000 tabs! <!-- I can see that using the repl analytics---> <!--5k this week alone (14 feb '23) --> - prank your friends!</h3></center>
-    
-    <ul>
-      <li><p>Please support this site by <strong>donating</strong> me in the bottom-left corner</p></li>
-      <li><p>This site also uses 1 <strong>cookie</strong> to not show this modal every time again when you visit this site!</p></li>
-    
-    </ul>
-    <center><h2>Last update features:</h2></center>
-    <ul>
-      <li>Added more error catching functions and logs it on the site</li>
-    </ul>
-    <br>
-    <p><strong>Press anywhere on the screen</strong> (except on this modal) to accept the cookie and hide this modal</p>
-    <hr>
-    <center><p>Made by Raadsel</p></center>
+  <div class="container">
+    <!-- Big Card -->
+    <div class="card mb-3 align-items-center">
+      <div class="card-body">
+        <h1 class="card-title text-center">Website Spammer</h1>
+        <p class="card-text text-center">This is Website Spammer. Enter how many websites you want to open and enter the URL. Then click start and enjoy I guess?</p>
+        <p id='status'></p>
+        <form>
+          <div class="input-group mb-2">
+            <input type="url" id="url" class="form-control col-md-7" placeholder="Enter website URL... (eg: https://example.com/)" required>
+            <div class="input-group-append">
+              <button class="btn btn-outline-primary spambtn" type="button" title="This button opens the URL you provided in as many tabs as you've specified." id='openBtn'>Open</button>
+            </div>
+          </div>
+          
+          <div class="input-group mb-2">
+            <input type="number" id="count" class="form-control col-md-7" placeholder="Enter number of tabs to open... (ex: 6)" required>
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary spambtn" type="button" title="This button copies the URL you provided and opens it in as many tabs as the number you've specified."  id='copyBtn'>Copy</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- Two Cards Side by Side -->
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title text-center">Virusspammer</h5>
+            <p class="card-text text-center">Opens tabs which open tabs that open tabs.</p>
+            <div class="pill-container">
+              <button id='virus-open' class="btn btn-outline-primary btn-pill1">Open URL</button>
+              <button id='virus-copy' class="btn btn-outline-secondary btn-pill2">Copy URL</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title text-center">Autospammer</h5>
+            <p class="card-text text-center">Opens a tab that opens 15 rickrolls!</p>
+            <div class="pill-container">
+              <button id='auto-open' class="btn btn-outline-primary btn-pill1">Open URL</button>
+              <button id='auto-copy' class="btn btn-outline-secondary btn-pill2">Copy URL</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
-</div>
-<script>
-//modal script
-// Get the modal
-function promptmodal() {
-  var modal = document.getElementById("myModal");
-  
-  // Get the button that opens the modal
-  var btn = document.getElementById("myBtn");
-  
-  // Get the <span> element that closes the modal
-  var span = document.getElementsByClassName("close")[0];
-  modal.style.display = "block";
-  
-  
-  // When the user clicks on <span> (x), close the modal
-  span.onclick = function() {
-    modal.style.display = "none";
-  }
-  
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  }
-}
-
-function setCookie(cname, cvalue, exdays) {
-  const d = new Date();
-  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-  let expires = "expires="+d.toUTCString();
-  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-
-function getCookie(cname) {
-  let name = cname + "=";
-  let ca = document.cookie.split(';');
-  for(let i = 0; i < ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
-  
-  
-function checkCookie() {
-  let check = getCookie("check_if_you_have_been_here_before,_so_that_we_dont_show_the_modal_with_selfpromo_and_info_again._smiley_face");
-  if (check != "") {
-    console.log("Welcome back")
-  } else {
-    promptmodal()
-    thing = `Checked`
-    
-    setCookie("check_if_you_have_been_here_before,_so_that_we_dont_show_the_modal_with_selfpromo_and_info_again._smiley_face", thing, 14);
-     
-  }
-}
-checkCookie()
-
-</script>
+  <div id="Modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div style='text-align: center;'>
+        <h2>System message:</h2>
+        <div style='text-align: center;' id='content'>
+        <h4>Website Spammer - opened over 100 000 tabs! - prank your friends!</h4>
+        <br>
+        <ul>
+          <li>Please support this site by <strong>donating</strong> me in the bottom-left corner</li>
+          <li>This site also uses 1 <strong>cookie</strong> to not show this modal every time again when you visit this site!</li>
+        </ul>
+        </div>
+      </div>
+    </div>
+  </div>
   <raadsel>
-  <div class="made-by">
-    <p>Made by</p>
-    <a href='https://raadsel.is-a.dev/'>
-      <img src="https://raadsel.is-a.dev/assets/Jorik-Loos-signature.png" alt="Jorik Loos' Signature">
-    </a>
-  </div>
-</raadsel>
-</body>
-</html>
-<html lang='en'>
-  <body class="visitcounter">
-    <div class='visitcounter'>
-<script type="text/javascript" src="https://www.counters-free.net/count/bchd"></script><br>
- <a href='http://www.counter-zaehler.de'>Unique visitors</a> 
+    <div class="made-by">
+      <p>Made by</p>
+      <a href='https://raadsel.is-a.dev/'>
+        <img src="https://raadsel.is-a.dev/assets/signature.png" alt="Jorik's Signature">
+      </a>
+    </div>
+  </raadsel>
 
-      
-                 <!--Visitor counter-->
-      
-        </body>
-</div>
-  <script src='https://raadsl.github.io/JS/credits.js'></script>
+</body>
+  <script src="script.js"></script>
+  <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="raadsel" data-description="Support me on Buy me a coffee!" data-message="If you like this site, consider buying me a coffee!" data-color="#FF813F" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+
 </html>
