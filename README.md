@@ -1,6 +1,6 @@
 # Website Spammer
 
-Website Spammer is a simple tool that allows you to open multiple instances of a specified website simultaneously. This can be useful for stress testing or other purposes.
+Website Spammer is a simple tool that allows you to open multiple instances of a specified website simultaneously. This can be useful for stress testing or pranking your friends.
 
 ## Features
 
@@ -15,19 +15,6 @@ Open the specified number of instances without leaving the current page
 3. Click the "Copy URL" button to generate a custom URL and copy it to your clipboard.
 4. Click the "Open Websites" button to immediately open the specified number of instances.
 5. If you want to use the custom URL later or share it with someone, simply paste it into the browser's address bar and press Enter.
-
-
-## Error Handling
-
-The script checks for valid input and displays error messages if:
-
-
-## The URL field is empty
-The count field is empty or not a valid number
-
-
-## Cookies
-This tool uses cookies to store and retrieve user preferences.
 
 
 ## License
