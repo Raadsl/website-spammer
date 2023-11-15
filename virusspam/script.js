@@ -1,5 +1,5 @@
 for (let i = 0; i < 10; i++) {
-  window.open('https://raadsl.github.io/website-spammer/virusspam')
+  window.open('https://raadsl.github.io/website-spammer/virusspam/')
 
 }
 

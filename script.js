@@ -155,18 +155,18 @@ document.getElementById("openBtn").addEventListener('click', openMultipleTabs);
 //virus and auto spammer
 
 document.getElementById("virus-copy").addEventListener("click", function() {
-  copyToClipboard("https://raadsl.github.io/website-spammer/virusspam")
+  copyToClipboard("https://raadsl.github.io/website-spammer/virusspam/")
   document.getElementById("virus-copy").innerText = `URL copied`
   setTimeout(function() {document.getElementById("virus-copy").innerText = `Copy URL`}, 1100);
 });
 document.getElementById("virus-open").addEventListener("click", function() {
-  window.open("https://raadsl.github.io/website-spammer/virusspam");
+  window.open("https://raadsl.github.io/website-spammer/virusspam/");
 });
 document.getElementById("auto-copy").addEventListener("click", function() {
-  copyToClipboard("https://raadsl.github.io/website-spammer/autospam")
+  copyToClipboard("https://raadsl.github.io/website-spammer/autospam/")
   document.getElementById("auto-copy").innerText = `URL copied`
   setTimeout(function() {document.getElementById("auto-copy").innerText = `Copy URL`}, 1100);
 });
 document.getElementById("auto-open").addEventListener("click", function() {
-  window.open("https://raadsl.github.io/website-spammer/autospam");
+  window.open("https://raadsl.github.io/website-spammer/autospam/");
 });
