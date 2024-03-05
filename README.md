@@ -1,5 +1,5 @@
 # Website Spammer
-
+# View project [here](https://raadsl.github.io/website-spammer)
 Website Spammer is a simple tool that allows you to open multiple instances of a specified website simultaneously. This can be useful for stress testing or pranking your friends.
 
 ## Features
