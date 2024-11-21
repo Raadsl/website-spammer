@@ -18,7 +18,7 @@ Open the specified number of instances without leaving the current page
 
 
 ## License
-This project is licensed under the terms of the MIT License. Please see the LICENSE file for more information.
+This project is licensed under the terms of the GPL-3.0 License. Please see the LICENSE file for more information.
 
 ## Credits
 Made by Jorik aka Raadsel.
