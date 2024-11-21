@@ -1,10 +1,10 @@
 User-agent: *
 Disallow: /autospam.html
-Disallow: /autospam
-Disallow: /virusspam
+Disallow: /autospam/
+Disallow: /virusspam/
 Disallow: /virusspam.html
 Disallow: /customurl.html
-Disallow: /customurl
+Disallow: /customurl/
 Allow: /
 
 sitemap: https://raadsl.github.io/website-spammer/sitemap.xml
