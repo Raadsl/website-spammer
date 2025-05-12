@@ -87,7 +87,7 @@ function copyUrl() {
     return;
   }
 
-  const formattedUrl = `https://raadsl.github.io/website-spammer/customurl?url=${urlValue}&times=${countValue}`;
+  const formattedUrl = `https://website-spammer.raadsel.dev/customurl?url=${urlValue}&times=${countValue}`;
   copyToClipboard(formattedUrl)
     .then(() => {
       document.getElementById("status").innerText = `Copied URL to open ${urlValue}, ${countValue} times!`;
@@ -101,16 +101,46 @@ function openMultipleTabs() {
   const count = parseInt(document.getElementById("count").value, 10);
   const errorMessage = validateInputs(url, count);
 
+  // Remove any previous popup warning
+  const prevWarning = document.getElementById("popup-warning");
+  if (prevWarning) prevWarning.remove();
+
   if (errorMessage) {
     displayErrorModal(errorMessage);
     return;
   }
 
   document.getElementById("status").innerText = `Opening ${count} websites...`;
+  let opened = 0;
   for (let i = 0; i < count; i++) {
-    window.open(url);
+    const win = window.open(url);
+    if (win) opened++;
   }
-  document.getElementById("status").innerText = `Done opening ${count} websites!`;
+  if (opened === 0) {
+    // Show warning with arrow if all popups were blocked
+    showPopupBlockedWarning();
+    document.getElementById("status").innerText = "Popup blocked! Please allow popups for this site.";
+  } else {
+    document.getElementById("status").innerText = `Done opening ${opened} websites!`;
+  }
+}
+
+// Show popup blocked warning with arrow
+function showPopupBlockedWarning() {
+  const openBtn = document.getElementById("openBtn");
+  const warning = document.createElement("div");
+  warning.id = "popup-warning";
+  warning.innerHTML = `
+    <div style="position: relative; display: flex; align-items: center; margin-top: 8px;">
+      <span style="color: #d9534f; font-weight: bold; background: #fff3cd; border: 1px solid #ffeeba; padding: 6px 12px; border-radius: 6px; box-shadow: 0 2px 8px #0001;">
+        <span style='font-size: 1.2em;'>&#8593;</span> <br>
+        Your browser blocked popups!<br>
+        Please allow popups for this site to open multiple tabs.
+      </span>
+    </div>
+  `;
+  // Insert after the open button's parent
+  openBtn.parentNode.parentNode.appendChild(warning);
 }
 
 // Add Event Listeners
@@ -119,10 +149,10 @@ function addEventListeners() {
   document.getElementById("openBtn").addEventListener("click", openMultipleTabs);
 
   const quickActions = [
-    { id: "virus-copy", url: "https://raadsl.github.io/website-spammer/virusspam/" },
-    { id: "virus-open", url: "https://raadsl.github.io/website-spammer/virusspam/" },
-    { id: "auto-copy", url: "https://raadsl.github.io/website-spammer/autospam/" },
-    { id: "auto-open", url: "https://raadsl.github.io/website-spammer/autospam/" },
+    { id: "virus-copy", url: "https://website-spammer.raadsel.dev/virusspam/" },
+    { id: "virus-open", url: "https://website-spammer.raadsel.dev/virusspam/" },
+    { id: "auto-copy", url: "https://website-spammer.raadsel.dev/autospam/" },
+    { id: "auto-open", url: "https://website-spammer.raadsel.dev/autospam/" },
   ];
 
   quickActions.forEach(({ id, url }) => {
